@@ -1,7 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { catchError, Observable, of } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
 import { SecurityService } from './security.service';
 import { Appointment } from '../interfaces';
 
@@ -38,9 +38,13 @@ export class AppointmentService {
             .pipe(catchError(() => of({ ok: false })));
     }
 
-    createAppointment(date: string, time: string) {
-        return this._http.post<{ ok: boolean }>(`${this._baseURL}/create`, { date, time }, this._headers);
+    createAppointment(date: string, time: string): Observable<string | null> {
+        return this._http.post<{ ok: boolean, appointment: { id: string } }>(`${this._baseURL}/create`, { date, time }, this._headers)
+            .pipe(
+                map(({ appointment }) => appointment.id)
+            )
     }
+
 
     getAppointmentsByDate(date: string): Observable<Appointment[]> {
         return this._http.get<Appointment[]>(`${this._baseURL}?date=${date}`, this._headers)

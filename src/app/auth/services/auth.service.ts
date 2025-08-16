@@ -29,7 +29,6 @@ export class AuthService {
 
     loginAccount(email: string, password: string): Observable<LoginResponse> {
         return this._http.post<LoginResponse>(`${this._url}/login`, { email, password })
-            .pipe(tap(console.log))
     }
 
     sendEmailToRecoverPassword(email: string) {

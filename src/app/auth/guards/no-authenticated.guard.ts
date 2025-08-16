@@ -8,7 +8,6 @@ export const NotAuthenticatedGuard: CanMatchFn = () => {
     const authService = inject(AuthService);
     const router = inject(Router);
 
-    console.log('hpla')
 
     return authService.validateUserSession()
         .pipe(
