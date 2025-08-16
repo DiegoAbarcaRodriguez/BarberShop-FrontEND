@@ -12,13 +12,6 @@ import { RouterOutlet } from '@angular/router';
         LogoutComponent,
         RouterOutlet
     ],
-    styles: [`
-        .layout{
-            padding:2rem;
-        }
-        
-        
-    `],
     templateUrl: 'layout.component.html'
 })
 

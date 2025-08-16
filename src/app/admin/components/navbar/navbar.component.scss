@@ -6,6 +6,7 @@
     justify-content: space-around;
     gap: 1.5rem;
     margin-top: 2rem;
+    margin-bottom: 4rem;
 
     &__item {
         @include m.button(v.$azul, v.$blanco, 768px) {

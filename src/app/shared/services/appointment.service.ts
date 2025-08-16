@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { catchError, Observable, of } from 'rxjs';
 import { SecurityService } from './security.service';
+import { Appointment } from '../interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class AppointmentService {
@@ -39,6 +40,11 @@ export class AppointmentService {
 
     createAppointment(date: string, time: string) {
         return this._http.post<{ ok: boolean }>(`${this._baseURL}/create`, { date, time }, this._headers);
+    }
+
+    getAppointmentsByDate(date: string): Observable<Appointment[]> {
+        return this._http.get<Appointment[]>(`${this._baseURL}?date=${date}`, this._headers)
+            .pipe(catchError(() => of([])))
     }
 
 
