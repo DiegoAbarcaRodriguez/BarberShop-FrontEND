@@ -29,7 +29,7 @@ export class AuthService {
 
     loginAccount(email: string, password: string): Observable<LoginResponse> {
         return this._http.post<LoginResponse>(`${this._url}/login`, { email, password })
-        .pipe(tap(console.log))
+            .pipe(tap(console.log))
     }
 
     sendEmailToRecoverPassword(email: string) {
@@ -46,4 +46,11 @@ export class AuthService {
         return this._http.get<{ ok: boolean }>(`${this._url}/validate-session`, { headers: { 'Authorization': `Bearer ${this._securityService.token}` } })
             .pipe(catchError(() => of({ ok: false })))
     }
+
+    validateAdminStatus(): Observable<{ ok: boolean }> {
+        return this._http.get<{ ok: boolean }>(`${this._url}/admin-status`, { headers: { 'Authorization': `Bearer ${this._securityService.token}` } })
+            .pipe(catchError(() => of({ ok: false })))
+    }
+
+
 }

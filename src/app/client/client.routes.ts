@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
 import { LayoutComponent } from "./layout/layout.component";
 
-export const clientRoutes: Routes = [
+const clientRoutes: Routes = [
     {
         path: '',
         component: LayoutComponent,
@@ -24,4 +24,6 @@ export const clientRoutes: Routes = [
             }
         ]
     }
-] 
+]
+
+export default clientRoutes;

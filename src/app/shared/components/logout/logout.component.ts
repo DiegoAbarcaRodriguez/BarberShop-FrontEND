@@ -5,7 +5,7 @@ import { SecurityService } from '../../../shared/services/security.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'client-logout-component',
+  selector: 'shared-logout-component',
   imports: [],
   templateUrl: './logout.component.html',
   styleUrl: './logout.component.scss'

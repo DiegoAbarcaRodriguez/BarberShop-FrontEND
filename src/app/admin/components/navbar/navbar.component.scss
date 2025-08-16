@@ -1,0 +1,16 @@
+@use 'mixins' as m;
+@use 'variables' as v;
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+    &__item {
+        @include m.button(v.$azul, v.$blanco, 768px) {
+            font-weight: bold;
+            width: auto;
+        }
+    }
+}

@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { TitlesComponent } from '../components/titles/titles.component';
-import { LogoutComponent } from '../components/logout/logout.component';
+import { TitlesComponent } from '../../shared/components/titles/titles.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { RouterOutlet } from '@angular/router';
-import { BottomTabsComponent } from "../../shared/components/bottom-tabs/bottom-tabs.component";
+import { LogoutComponent } from '../../shared/components/logout/logout.component';
+import { BottomTabsComponent } from '../components/bottom-tabs/bottom-tabs.component';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { BottomTabsComponent } from "../../shared/components/bottom-tabs/bottom-
     NavbarComponent,
     RouterOutlet,
     BottomTabsComponent,
-],
+  ],
   templateUrl: './layout.component.html',
 })
 export class LayoutComponent {

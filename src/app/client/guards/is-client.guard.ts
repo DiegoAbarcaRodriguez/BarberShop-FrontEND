@@ -1,22 +1,36 @@
 import { inject } from '@angular/core';
 import { CanMatchFn, Router, Route } from '@angular/router';
 import { AuthService } from '../../auth/services/auth.service';
-import { map } from 'rxjs';
+import { map, switchMap, tap } from 'rxjs';
 
 export const IsClientGuard: CanMatchFn = () => {
-    const _authService = inject(AuthService);
-    const _router = inject(Router);
+    const authService = inject(AuthService);
+    const router = inject(Router);
 
-    return _authService.validateUserSession()
-        .pipe(map(({ ok }) => {
+    let isAdmin: boolean;
+
+    return authService.validateAdminStatus()
+        .pipe(
+            tap(({ ok }) => isAdmin = ok),
+            switchMap(() => authService.validateUserSession()),
+            map(({ ok }) => {
+
+                if (isAdmin) {
+                    router.navigateByUrl('/admin');
+                    return false;
+                }
 
 
-            if (!ok) {
-                _router.navigateByUrl('/');
-                localStorage.clear();
-            }
+                if (!ok) {
+                    router.navigateByUrl('/');
+                    localStorage.clear();
+                }
 
 
-            return ok;
-        }));
+
+                return ok;
+            })
+        );
+
+
 }

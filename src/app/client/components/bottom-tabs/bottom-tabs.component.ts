@@ -1,10 +1,11 @@
 import { NgClass, NgStyle } from '@angular/common';
 import { Component, computed, inject, linkedSignal } from '@angular/core';
 import { Router } from '@angular/router';
-import { SharedService } from '../../services/shared.service';
+import { SharedService } from '../../../shared/services/shared.service';
+
 
 @Component({
-  selector: 'shared-bottom-tabs-component',
+  selector: 'client-bottom-tabs-component',
   imports: [
     NgStyle,
     NgClass
