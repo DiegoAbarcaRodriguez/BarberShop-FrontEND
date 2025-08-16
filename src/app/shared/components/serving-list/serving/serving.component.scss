@@ -1,0 +1,42 @@
+@use "variables" as *;
+
+.service {
+    cursor: pointer;
+    flex-grow: 1;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: $blanco;
+
+
+    &__title {
+        color: $negro;
+    }
+
+    &__price {
+        margin-top: .5rem;
+        font-size: 2.5rem;
+        color: $azul;
+        font-weight: bold;
+        display: block;
+    }
+}
+
+.service:hover {
+    transition: all 500ms ease;
+    transform: scale(1.1);
+}
+
+.service--selected {
+    @extend .service;
+    background-color: $azul;
+
+    .service__title {
+        color: $blanco;
+    }
+
+    .service__price {
+        color: $blanco;
+    }
+
+}

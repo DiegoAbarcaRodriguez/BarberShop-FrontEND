@@ -1,0 +1,26 @@
+ @use 'variables' as*;
+
+
+
+ .serving {
+     gap: .5rem;
+
+     &__name {
+         margin-bottom: .5rem;
+     }
+
+     &:last-of-type {
+         border-bottom: solid white 1px;
+     }
+
+     &__price {
+         margin-top: .8rem;
+
+         span {
+             color: $azul;
+             font-weight: 900;
+             margin-right: .5rem;
+             font-size: 23px;
+         }
+     }
+ }

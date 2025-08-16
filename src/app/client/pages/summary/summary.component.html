@@ -1,0 +1,11 @@
+@if(appointmentData()!.time === '' || appointmentData()!.date ==='' || this.servingsSelected()!.length === 0){
+
+<shared-notification-component [isError]="true" message="Must fill out all the required fields!" />
+
+}@else {
+
+<summary-serving-list-component [services]="servingsSelected()" />
+
+<summary-appointment-component [userName]="userName()" [appointmentData]="appointmentData()!"
+    [services]="servingsSelected()" />
+}

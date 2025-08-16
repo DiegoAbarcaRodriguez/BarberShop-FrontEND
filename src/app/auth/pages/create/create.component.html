@@ -1,0 +1,92 @@
+<form class="auth__form" [class.my-2]="hasEmptyField() || errorFromServer()" [formGroup]="form" (ngSubmit)="createAccount()">
+
+    @if (hasEmptyField()) {
+        <shared-notification-component class="mb-1" message="All the fields are mandatory!" [isError]="true"></shared-notification-component>
+    }
+
+    @if (errorFromServer()) {
+        <shared-notification-component class="mb-1" [message]="errorFromServer()" [isError]="true"></shared-notification-component>
+    }
+
+    <div class="auth__field">
+        <label for="name">Name</label>
+        <input class="auth__input" type="text" id="name" placeholder="Your name" formControlName="first_name">
+    </div>
+
+    @if(hasErrorField('first_name')){
+        @for (error of getErrorsByField('first_name'); track error) {
+            <shared-notification-component [message]="error" [isError]="true"></shared-notification-component>
+        }
+    }
+
+    <div class="auth__field">
+        <label for="last_name">Last Name</label>
+        <input class="auth__input" type="text" id="last_name" placeholder="Your last name" formControlName="last_name">
+    </div>
+
+    
+    @if(hasErrorField('last_name')){
+        @for (error of getErrorsByField('last_name'); track error) {
+            <shared-notification-component [message]="error" [isError]="true"></shared-notification-component>
+        }
+    }
+
+
+    <div class="auth__field">
+        <label for="phone">Phone</label>
+        <input class="auth__input" type="phone" id="phone" maxlength="10" placeholder="Your phone"
+            formControlName="phone">
+    </div>
+
+    
+    @if(hasErrorField('phone')){
+        @for (error of getErrorsByField('phone'); track $index) {
+            <shared-notification-component [message]="error" [isError]="true"></shared-notification-component>
+        }
+    }
+
+
+    <div class="auth__field">
+        <label for="email">Email</label>
+        <input class="auth__input" type="email" id="email" placeholder="Your email" formControlName="email">
+    </div>
+
+    
+    @if(hasErrorField('email')){
+        @for (error of getErrorsByField('email'); track $index) {
+            <shared-notification-component [message]="error" [isError]="true"></shared-notification-component>
+        }
+    }
+
+
+    <div class="auth__field">
+        <label for="password">Password</label>
+        <input class="auth__input" type="password" id="password" placeholder="Your password" formControlName="password">
+    </div>
+
+    
+    @if(hasErrorField('password')){
+        @for (error of getErrorsByField('password'); track $index) {
+            <shared-notification-component [message]="error" [isError]="true"></shared-notification-component>
+        }
+    }
+
+
+    <div class="auth__field">
+        <label for="password2">Password</label>
+        <input class="auth__input" type="password" id="password2" placeholder="Confirm your password"
+            formControlName="confirmingPassword">
+    </div>
+
+    
+    @if(hasErrorField('confirmingPassword')){
+        @for (error of getErrorsByField('confirmingPassword'); track $index) {
+            <shared-notification-component [message]="error" [isError]="true"></shared-notification-component>
+        }
+    }
+
+
+    <button class="auth__button text-start" type="submit" [disabled]="createUserResource.isLoading()">
+        Create new account
+    </button>
+</form>

@@ -1,0 +1,16 @@
+.tabs {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__option {
+        font-size: 1.4rem;
+    }
+
+    &__option:hover {
+        transition: font-weight 500ms ease-in;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,32 @@
+<div class="appointment">
+    <form class="appointment__form" [formGroup]="form">
+
+        <div class="appointment__field">
+            <label for="name">Name</label>
+            <input class="appointment__input" type="text" id="name" readonly formControlName="name">
+        </div>
+
+        <div class="appointment__field">
+            <label for="name">Date</label>
+            <input class="appointment__input" type="date" id="date" [min]="currentDate()" formControlName="date">
+        </div>
+
+
+        <div class="appointment__field">
+            <label for="time">Time</label>
+            <input class="appointment__input" type="time" id="time"  formControlName="time" roundTime [form]="form">
+        </div>
+
+          @if(hasErrorField('date')){
+            @for (error of getErrorsByField('date'); track error) {
+                <shared-notification-component [message]="error" [isError]="true"></shared-notification-component>
+            }
+        }
+
+        @if(hasErrorField('time')){
+            @for (error of getErrorsByField('time'); track error) {
+                <shared-notification-component [message]="error" [isError]="true"></shared-notification-component>
+            }
+        }
+    </form>
+</div>

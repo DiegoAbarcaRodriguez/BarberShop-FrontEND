@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+div {
+    margin-top: 5rem;
+}
+
+span {
+    cursor: pointer;
+    display: block;
+    background-color: $azul;
+    color: $blanco;
+    font-weight: bold;
+    padding: 1rem 5rem;
+
+}

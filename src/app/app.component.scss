@@ -1,0 +1,8 @@
+.flex-grow:nth-child(1) {
+    min-height: 100vh;
+}
+
+.flex-grow:last-child {
+    height: 100vh;
+    overflow-y: scroll;
+}

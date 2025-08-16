@@ -1,0 +1,17 @@
+<div class="tabs">
+    @if(currentUrl() === '/create-account'){
+    <p class="tabs__option" routerLink="/">Do you have an account already? Login</p>
+    <p class="tabs__option" routerLink="/forget-password">Do you forget your password?</p>
+    }
+    @if(currentUrl() === '/'){
+    <p class="tabs__option" routerLink="/create-account">Don't you have an account yet? Create one</p>
+    <p class="tabs__option" routerLink="forget-password">Do you forget your password?</p>
+    }
+    @if(currentUrl() === '/recover-password' || currentUrl()==='/forget-password'){
+    <p class="tabs__option" routerLink="/">Do you have an account already? Login</p>
+    <p class="tabs__option" routerLink="/create-account">Don't you have an account yet? Create one</p>
+    }
+    @if(currentUrl().includes('/confirm-account') && authService.mustShowLoginOption()){
+    <p class="tabs__option text-start" routerLink="/">Login</p>
+    }
+</div>

@@ -1,0 +1,59 @@
+@use './variables' as *;
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-start {
+    justify-content: start;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-start {
+    text-align: start;
+}
+
+.text-end {
+    text-align: end;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.my-2 {
+    margin: 2rem auto !important;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+
+.pointer {
+    cursor: pointer;
+}

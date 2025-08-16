@@ -1,0 +1,9 @@
+<li class="service" [class.service--selected]="this.serving().isSelected" (click)="toggleService()">
+    <span class="service__title">
+        {{serving().name}}
+    </span>
+
+    <span class="service__price">
+        {{serving().price}}
+    </span>
+</li>

@@ -1,0 +1,20 @@
+@use './variables' as *;
+
+.notification {
+    margin: 1rem auto;
+    width: 100%;
+    padding: 1rem;
+    color: $blanco;
+    font-weight: 800;
+    text-align: center;
+    border-radius: .5rem;
+    text-transform: capitalize;
+}
+
+.notification--error {
+    background-color: $rojo;
+}
+
+.notification--success {
+    background-color: $verde;
+}

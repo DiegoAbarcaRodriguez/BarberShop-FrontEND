@@ -1,0 +1,24 @@
+@use 'mixins' as m;
+@use 'variables' as v;
+
+button {
+    margin-top: 2rem;
+
+    @include m.button(v.$azul, v.$blanco, 768px) {
+        font-weight: bold;
+        width: auto;
+    }
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin: 0;
+}
+
+span {
+    color: v.$azul;
+    font-weight: 900;
+}

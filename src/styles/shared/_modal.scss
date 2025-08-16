@@ -1,0 +1,46 @@
+@use './variables' as *;
+
+.blink {
+    animation: blinking 1000ms ease-in none infinite;
+    font-size: 60px;
+    display: block;
+    margin-top: 1rem;
+}
+
+.text-success {
+    font-weight: bold;
+    color: $verde;
+}
+
+.text-danger {
+    font-weight: bold;
+    color: $rojo;
+}
+
+.modal-title {
+    color: black;
+    font-weight: bold;
+}
+
+.modal-text {
+    font-size: 1.4rem;
+    color: black;
+}
+
+.swal2-html-container {
+    overflow: hidden !important;
+}
+
+@keyframes blinking {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

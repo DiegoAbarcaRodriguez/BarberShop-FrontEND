@@ -1,0 +1,8 @@
+<h2 class="text-center">Services Summary</h2>
+
+<ul>
+    @for (service of services(); track service.id) {
+    <summary-serving-element-component [service]="service" />
+    }
+
+</ul>

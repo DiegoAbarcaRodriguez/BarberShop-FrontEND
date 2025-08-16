@@ -1,0 +1,58 @@
+@use '../shared/mixins' as m;
+@use '../shared/variables' as v;
+
+.auth,
+.appointment {
+    padding: 2rem 4rem;
+
+    &__form {
+        margin-top: 4rem;
+    }
+
+    &__field {
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        label {
+            flex-basis: 6rem;
+            color: white;
+        }
+
+    }
+
+    &__input {
+        border: none;
+        border-radius: .5rem;
+        padding: 1rem;
+        flex-grow: 1;
+
+    }
+
+    
+
+
+
+
+    &__button {
+
+        margin-top: 2rem;
+        font-weight: bold;
+
+        @include m.button(v.$azul, v.$blanco, 768px) {
+            width: auto;
+        }
+
+    }
+
+    &__button:hover {
+        transition: opacity 500ms ease-in;
+        opacity: 90%;
+    }
+
+    &__button:disabled {
+        cursor: not-allowed;
+        background-color: darken($color: v.$azul, $amount: 40);
+    }
+}

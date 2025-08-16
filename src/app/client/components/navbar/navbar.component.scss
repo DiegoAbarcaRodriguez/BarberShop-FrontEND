@@ -1,0 +1,28 @@
+.navbar {
+    margin: 5rem auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        cursor: pointer;
+        flex-grow: 1;
+        padding: 1rem;
+        background-color: #0da6f3;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: capitalize;
+
+    }
+
+
+}
+
+
+.navbar__item--selected,
+.navbar__item:hover {
+    transition: all 500ms ease-in;
+    background-color: white;
+    color: #0da6f3;
+}

@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-between"
+  [ngClass]="{'justify-content-start':!mustShowRightButton(),
+  'justify-content-end':!mustShowLeftButton(),'justify-content-between':mustShowLeftButton() && mustShowRightButton()}">
+  <span [ngStyle]="{'display':mustShowLeftButton()?'block':'none'}" (click)="navigate(false)">
+    &leftarrow; Back
+  </span>
+  <span [ngStyle]="{'display':mustShowRightButton()?'block':'none'}" (click)="navigate()">
+    Next &rightarrow;
+  </span>
+</div>

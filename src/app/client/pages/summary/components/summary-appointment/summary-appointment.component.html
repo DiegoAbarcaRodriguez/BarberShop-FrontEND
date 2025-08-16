@@ -1,0 +1,26 @@
+<h2 class="text-center">Appointment Summary</h2>
+
+<ul>
+    <li>
+        <p>
+            <span>Name:</span>
+            {{userName()}}
+        </p>
+    </li>
+    <li>
+        <p>
+            <span>Date:</span>
+            {{date() | date: "EEEE, d MMMM y'"}}
+        </p>
+    </li>
+    <li>
+        <p>
+            <span>Time:</span>
+            {{appointmentData()?.time}} Horas
+        </p>
+    </li>
+</ul>
+
+<button (click)="createAppointment()">
+    Book Appointment
+</button>

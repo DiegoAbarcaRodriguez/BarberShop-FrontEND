@@ -1,0 +1,8 @@
+<ul class="serving-list">
+    @for(serving of servings();track serving.id){
+        <shared-serving-component [serving]="serving" class="d-flex flex-grow"></shared-serving-component>
+    } @empty {
+        <p>There is no service yet!</p>
+    }
+
+</ul>

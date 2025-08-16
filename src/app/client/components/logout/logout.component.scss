@@ -1,0 +1,13 @@
+span:first-child {
+    font-size: 19px;
+}
+
+.pointer:hover {
+    transition: font-size 100ms ease-in;
+    font-weight: bolder;
+    font-size: 21px;
+}
+
+.d-flex {
+    margin-top: 5rem;
+}

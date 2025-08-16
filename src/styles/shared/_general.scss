@@ -1,0 +1,28 @@
+@use './variables' as v;
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    background-color: v.$negro;
+    overflow: hidden;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
