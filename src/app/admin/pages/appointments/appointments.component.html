@@ -1,3 +1,22 @@
 <h2>Look for appointments</h2>
 
 <admin-searcher (onEmitDate)="date.set($event)" />
+
+
+
+@if(appointmentsResource.value()){
+<ul class="apointments-list">
+    @for(appointment of appointmentsResource.value() ;track appointment.appointment.id){
+    <li class="appointment">
+        <admin-appointment-item [appointment]="appointment" />
+        <button class="appointment__remove">Remove</button>
+    </li>
+
+    }@empty{
+    @if(appointmentsResource.value()){
+    <h3>No appointments yet!</h3>
+    }
+
+    }
+</ul>
+}

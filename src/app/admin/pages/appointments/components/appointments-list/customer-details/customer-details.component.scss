@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.customer-details {
+    &__item {
+        color: $azul;
+        margin-top: 1rem;
+        font-weight: bolder;
+        font-size: 2.2rem;
+    }
+
+    &__bold {
+        color: white;
+        font-size: 2rem;
+    }
+}

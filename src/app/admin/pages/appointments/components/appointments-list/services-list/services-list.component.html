@@ -1,0 +1,12 @@
+<ul class="services-list">
+    @for( service of services() ;track service.id){
+        <li class="services-list__item">
+            {{service.name}}  {{service.price | currency:'USD':'symbol-narrow':'1.2-2'}}
+        </li>
+    }
+
+</ul>
+
+<p>
+    Total: <span>{{total() | currency:'USD':'symbol-narrow':'1.2-2'}}</span>
+</p>

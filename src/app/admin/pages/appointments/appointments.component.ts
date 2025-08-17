@@ -3,11 +3,16 @@ import { SearcherComponent } from "./components/searcher/searcher.component";
 import { AppointmentService } from '../../../shared/services/appointment.service';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { of } from 'rxjs';
+import { AppointmentItemComponent } from './components/appointments-list/appointment-item.component';
+
 
 @Component({
-  imports: [SearcherComponent],
+  imports: [
+    SearcherComponent,
+    AppointmentItemComponent,
+  ],
   templateUrl: './appointments.component.html',
-  styles: ``
+  styleUrl:'appointments.component.scss'
 })
 export default class AppointmentsComponent {
 

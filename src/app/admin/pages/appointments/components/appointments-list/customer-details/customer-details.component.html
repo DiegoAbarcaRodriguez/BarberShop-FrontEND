@@ -1,0 +1,19 @@
+<ul class="customer-details">
+    <li class="customer-details__item">ID:
+        <span class="customer-details__bold">{{customerDetails()?.id | slice: 0:8}}</span>
+    </li>
+    <li class="customer-details__item">Time:
+        <span class="customer-details__bold">{{customerDetails()?.time}}</span>
+    </li>
+    <li class="customer-details__item">Client:
+        <span class="customer-details__bold">
+            {{customerDetails()?.user_fk?.first_name+''+customerDetails()?.user_fk?.last_name}}
+        </span>
+    </li>
+    <li class="customer-details__item">Email:
+        <span class="customer-details__bold">{{customerDetails()?.user_fk?.email}}</span>
+    </li>
+    <li class="customer-details__item">Phone:
+        <span class="customer-details__bold"> {{customerDetails()?.user_fk?.phone}}</span>
+    </li>
+</ul>

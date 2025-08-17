@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { catchError, map, Observable, of } from 'rxjs';
 import { SecurityService } from './security.service';
-import { Appointment } from '../interfaces';
+import { AppointmentElement, AppointmentsResponse } from '../interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class AppointmentService {
@@ -46,9 +46,12 @@ export class AppointmentService {
     }
 
 
-    getAppointmentsByDate(date: string): Observable<Appointment[]> {
-        return this._http.get<Appointment[]>(`${this._baseURL}?date=${date}`, this._headers)
-            .pipe(catchError(() => of([])))
+    getAppointmentsByDate(date: string): Observable<AppointmentElement[]> {
+        return this._http.get<AppointmentsResponse>(`${this._baseURL}?date=${date}`, this._headers)
+            .pipe(
+                map(({ appointments }) => appointments),
+                catchError(() => of([]))
+            )
     }
 
 
