@@ -54,5 +54,9 @@ export class AppointmentService {
             )
     }
 
+    deleteAppointment(id: string): Observable<{ ok: boolean }> {
+        return this._http.delete<{ ok: boolean }>(`${this._baseURL}/${id}`, this._headers);
+    }
+
 
 }

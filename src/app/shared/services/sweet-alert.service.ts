@@ -5,7 +5,19 @@ import Swal, { SweetAlertIcon } from 'sweetalert2';
 export class SweetAlertService {
     constructor() { }
 
-    showAlert(title: string, html: string) {
+    showAlert(title: string, html: string, isQuestionType: boolean = false) {
+
+        if (isQuestionType) {
+            return Swal.fire({
+                title,
+                icon: 'question',
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                showCancelButton: true,
+                showCloseButton: true
+            });
+        }
+
         return Swal.fire({ title, html });
     }
 

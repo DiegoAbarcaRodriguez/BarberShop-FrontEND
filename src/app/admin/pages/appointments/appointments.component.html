@@ -4,19 +4,15 @@
 
 
 
-@if(appointmentsResource.value()){
+
 <ul class="apointments-list">
-    @for(appointment of appointmentsResource.value() ;track appointment.appointment.id){
+    @for(appointment of appointments() ;track appointment.appointment.id){
     <li class="appointment">
         <admin-appointment-item [appointment]="appointment" />
-        <button class="appointment__remove">Remove</button>
+        <button class="appointment__remove" (click)="deleteAppointment(appointment.appointment.id)">Remove</button>
     </li>
 
     }@empty{
-    @if(appointmentsResource.value()){
     <h3>No appointments yet!</h3>
     }
-
-    }
 </ul>
-}
