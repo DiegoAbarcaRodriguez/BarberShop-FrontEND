@@ -5,7 +5,7 @@ import { ValidatorFormsService } from '../../../../../shared/services/validators
 import { NotificationComponent } from '../../../../../shared/components/notification/notification.component';
 import { RoundTimeDirective } from '../../../../directives/round-time.directive';
 import { AppointmentService } from '../../../../../shared/services/appointment.service';
-import { validateExistingAppointment } from '../../../../../shared/services/validators/validate-existing-appointment';
+import { ValidateExistingAppointment } from '../../../../../shared/services/validators/validate-existing-appointment.service';
 
 
 @Component({
@@ -24,6 +24,7 @@ export class AppointmentFormComponent implements OnDestroy, OnInit {
 
   private _fb = inject(FormBuilder);
   private _validatorFormsService = inject(ValidatorFormsService);
+  private _validateExistingAppointment = inject(ValidateExistingAppointment);
   private _appointmentService = inject(AppointmentService);
 
   form = this._fb.group({
@@ -32,7 +33,7 @@ export class AppointmentFormComponent implements OnDestroy, OnInit {
     'time': ['', [Validators.required, this._validatorFormsService.validateAppointmentTime]]
   }, {
     updateOn: 'blur',
-    asyncValidators: [validateExistingAppointment(this._appointmentService)]
+    asyncValidators: [this._validateExistingAppointment]
   })
 
   constructor() {

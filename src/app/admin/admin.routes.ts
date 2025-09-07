@@ -15,7 +15,11 @@ const adminRoutes: Routes = [
             },
 
             {
-                path: 'add-update-service',
+                path: 'add-service',
+                loadComponent: () => import('./pages/add-update-service/add-update-service.component')
+            },
+            {
+                path: 'update-service/:id',
                 loadComponent: () => import('./pages/add-update-service/add-update-service.component')
             },
             {

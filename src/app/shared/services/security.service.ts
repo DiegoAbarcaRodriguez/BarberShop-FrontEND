@@ -1,15 +1,14 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, Signal, signal } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class SecurityService {
     constructor() { }
 
-    private _token = signal(localStorage.getItem('token') || '');
+    private _token = signal('');
 
     set token(token: string) {
         if (!token) return;
         this._token.set(token);
-        localStorage.setItem('token', token);
     }
 
     get token() {
@@ -18,7 +17,6 @@ export class SecurityService {
 
     clearToken() {
         this._token.set('');
-        localStorage.removeItem('token');
     }
 
 

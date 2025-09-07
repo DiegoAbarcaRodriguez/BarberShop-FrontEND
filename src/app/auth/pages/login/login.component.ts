@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { SecurityService } from '../../../shared/services/security.service';
 import { AppointmentService } from '../../../shared/services/appointment.service';
+import { TimingService } from '../../../shared/services/timing.service';
 
 @Component({
   imports: [
@@ -26,6 +27,7 @@ export default class LoginComponent {
   private _authService = inject(AuthService);
   private _securityService = inject(SecurityService);
   private _appointmentService = inject(AppointmentService);
+  private _timingService = inject(TimingService);
   private _router = inject(Router);
 
   private _body = signal<{ email: string, password: string } | undefined>(undefined);
@@ -43,6 +45,7 @@ export default class LoginComponent {
 
     this._securityService.token = this.loginResource.value()!.token;
     this._appointmentService.setUserName(this.loginResource.value()?.userName || '');
+    this._timingService.initializeCounterToShowAlert();
     this._router.navigateByUrl('/book/services');
 
   });

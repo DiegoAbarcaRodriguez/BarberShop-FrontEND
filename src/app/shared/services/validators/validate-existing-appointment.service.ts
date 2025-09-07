@@ -1,19 +1,24 @@
-import { AbstractControl, AsyncValidatorFn } from '@angular/forms';
-import { map, of } from 'rxjs';
+import { AbstractControl, AsyncValidator, ValidationErrors } from '@angular/forms';
+import { map, Observable, of } from 'rxjs';
 import { AppointmentService } from '../appointment.service';
+import { inject, Injectable } from '@angular/core';
 
+@Injectable({ providedIn: 'root' })
+export class ValidateExistingAppointment implements AsyncValidator {
 
-export const validateExistingAppointment = (appointmentService: AppointmentService): AsyncValidatorFn => {
-    return (form: AbstractControl) => {
+   
+    constructor(private _appointmentService: AppointmentService) {
 
+    }
 
+    validate(form: AbstractControl): Observable<ValidationErrors | null> {
         const date = form.get('date')?.value;
         const time = form.get('time')?.value;
         if (!time || !date) return of(null);
         if (time.split(':').at(1) != '00' && time.split(':').at(1) != '30') return of(null);
 
 
-        return appointmentService.getExistingAppointment(date, time)
+        return this._appointmentService?.getExistingAppointment(date, time)
             .pipe(map(({ ok }) => {
                 if (!ok) {
                     form.get('date')?.setErrors({ appointmentTaken: true });
@@ -25,9 +30,12 @@ export const validateExistingAppointment = (appointmentService: AppointmentServi
                 }
                 return null
             }));
-
     }
+
+
 }
+
+
 
 
 

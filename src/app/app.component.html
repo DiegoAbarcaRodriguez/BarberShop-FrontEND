@@ -5,3 +5,7 @@
     <router-outlet />
   </div>
 </div>
+
+@if(currentUrl.includes('/book') || currentUrl.includes('/admin') ){
+<shared-counter />
+}

@@ -18,10 +18,6 @@ export default class ServingsComponent {
     this.servingsService.updatedServings.set(this.servingsResource.value()!);
   });
 
-  localStorageEffectRef = effect(() => {
-    if (this.servingsService.updatedServings().length === 0) return;
-    localStorage.setItem('services', JSON.stringify(this.servingsService.updatedServings()));
-  });
 
   servingsResource = rxResource({
     loader: () => {

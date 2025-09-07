@@ -5,5 +5,6 @@ export const errorsMap: Record<string, string> = {
     'misMatchedPasswords': 'The passwords are differents',
     'dateNotValid': 'We do not work on weekends',
     'timeNotValid': 'We do not work in that schedule',
-    'appointmentTaken': 'There is already a reserved appointment!'
+    'appointmentTaken': 'There is already a reserved appointment!',
+    'min': 'The value must be greater than 0'
 }

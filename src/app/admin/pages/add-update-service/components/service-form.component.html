@@ -1,0 +1,29 @@
+<div class="service">
+    <form class="service__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div class="service__field">
+            <label for="name">Name</label>
+            <input type="text" class="service__input" id="name" formControlName="name">
+        </div>
+
+
+        @for(error of getErrorsFromField('name');track error){
+        <shared-notification-component [isError]="true" [message]="error" />
+        }
+
+        <div class="service__field">
+            <label for="price">Price</label>
+            <input type="number" min="0" class="service__input" id="price" formControlName="price">
+        </div>
+
+        @for(error of getErrorsFromField('price');track error){
+        <shared-notification-component [isError]="true" [message]="error" />
+        }
+
+        @if(hasEmptyFields()){
+        <shared-notification-component [isError]="true" [message]="'Must fill out all the fields'" />
+
+        }
+    </form>
+    <button type="submit" class="service__button" (click)="onSubmit()"> Save Service</button>
+</div>

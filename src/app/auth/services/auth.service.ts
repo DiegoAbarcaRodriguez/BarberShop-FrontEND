@@ -42,13 +42,13 @@ export class AuthService {
     }
 
     validateUserSession(): Observable<{ ok: boolean }> {
-        return this._http.get<{ ok: boolean }>(`${this._url}/validate-session`, { headers: { 'Authorization': `Bearer ${this._securityService.token}` } })
-            .pipe(catchError(() => of({ ok: false })))
+        return this._http.get<{ ok: boolean, isSessionError?: boolean }>(`${this._url}/validate-session`, { headers: { 'Authorization': `Bearer ${this._securityService.token}` } })
+            .pipe(catchError(() => of({ ok: false })));
     }
 
     validateAdminStatus(): Observable<{ ok: boolean }> {
         return this._http.get<{ ok: boolean }>(`${this._url}/admin-status`, { headers: { 'Authorization': `Bearer ${this._securityService.token}` } })
-            .pipe(catchError(() => of({ ok: false })))
+            .pipe(catchError(() => of({ ok: false })));
     }
 
 

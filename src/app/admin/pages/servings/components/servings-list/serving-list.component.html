@@ -1,0 +1,8 @@
+<ul>
+    @for (service of services(); track service.id) {
+    <admin-serving-item [service]="service" (onEmitServiceId)="onDeleteService($event)" />
+    } @empty {
+    <p>No services yet!</p>
+    }
+
+</ul>

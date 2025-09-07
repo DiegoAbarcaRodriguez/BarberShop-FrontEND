@@ -1,0 +1,44 @@
+@use 'mixins' as m;
+@use 'variables' as v;
+
+.service {
+    border-top: 1px solid white;
+    padding: 0;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    &__text {
+        font-size: 2rem;
+        font-weight: bold;
+        color: v.$azul;
+        margin: 0;
+
+        span {
+            color: white;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+
+    &__update {
+        @include m.button(v.$azul, white, v.$tablet) {
+            width: auto;
+        }
+    }
+
+    &__delete {
+        @include m.button(v.$rojo, white, v.$tablet) {
+            width: auto;
+        }
+    }
+
+}

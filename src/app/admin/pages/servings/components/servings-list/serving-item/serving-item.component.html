@@ -1,0 +1,26 @@
+<li class="service">
+    <div class="service__content">
+        <p class="service__text">
+            Name:
+            <span>
+                {{service().name}}
+            </span>
+        </p>
+
+        <p class="service__text">
+            Price:
+            <span>
+                {{service().price}}
+            </span>
+        </p>
+    </div>
+    <div class="service__buttons">
+        <button class="service__update" [routerLink]="['/admin/update-service',service().id]">
+            Update
+        </button>
+        <button class="service__delete" (click)="deleteService(service().id)">
+            Delete
+        </button>
+    </div>
+
+</li>

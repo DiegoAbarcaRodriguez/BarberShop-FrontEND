@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { authRoutes } from './auth/auth.routes';
 import { IsClientGuard } from './client/guards/is-client.guard';
 import { IsAdminGuard } from './admin/guards/is-admin.guard';
 
@@ -9,7 +8,7 @@ import { IsAdminGuard } from './admin/guards/is-admin.guard';
 export const routes: Routes = [
     {
         path: '',
-        children: authRoutes
+        loadChildren: () => import('./auth/auth.routes'),
     },
     {
         path: 'book',

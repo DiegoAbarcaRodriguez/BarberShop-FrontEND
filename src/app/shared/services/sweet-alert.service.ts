@@ -21,4 +21,8 @@ export class SweetAlertService {
         return Swal.fire({ title, html });
     }
 
+    showRunOutTimeAlert() {
+        Swal.fire('Session almost done!', '', 'info');
+    }
+
 }

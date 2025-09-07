@@ -4,6 +4,7 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
 import { RouterOutlet } from '@angular/router';
 import { LogoutComponent } from '../../shared/components/logout/logout.component';
 import { BottomTabsComponent } from '../components/bottom-tabs/bottom-tabs.component';
+import { SecurityService } from '../../shared/services/security.service';
 
 
 @Component({
@@ -17,6 +18,4 @@ import { BottomTabsComponent } from '../components/bottom-tabs/bottom-tabs.compo
   templateUrl: './layout.component.html',
 })
 export class LayoutComponent {
-
-
 }

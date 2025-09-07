@@ -1,0 +1,22 @@
+@use 'variables' as v;
+
+.counter {
+    padding: 1rem 1.5rem;
+    position: fixed;
+    bottom: 5%;
+    left: 43%;
+    border-radius: 1.2rem;
+    background-color: v.$azul;
+    box-shadow: 1px 1px 10px 2px v.$azul;
+
+    span {
+        font-weight: bold;
+        font-size: 2rem;
+        color: white;
+    }
+
+    &--danger {
+        background-color: v.$rojo;
+        box-shadow: 1px 1px 10px 2px v.$rojo;
+    }
+}

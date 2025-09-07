@@ -3,6 +3,7 @@
 
 .auth,
 .appointment,
+.service,
 .admin {
     padding: 2rem 4rem;
 
@@ -56,4 +57,9 @@
         cursor: not-allowed;
         background-color: darken($color: v.$azul, $amount: 40);
     }
+}
+
+.service {
+    padding: 0 4rem;
+    margin-bottom: 3rem;
 }
