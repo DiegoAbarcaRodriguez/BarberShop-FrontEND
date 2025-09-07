@@ -29,7 +29,7 @@ export class CounterComponent implements OnInit, OnDestroy {
                 }
 
                 if (this.time === '2:00') {
-                    window.location.href = environment.frontUrl+'?sessionExpired=true';
+                    //window.location.href = environment.frontUrl+'?sessionExpired=true';
                     return;
                 }
             })

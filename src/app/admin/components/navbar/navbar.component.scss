@@ -8,6 +8,12 @@
     margin-top: 2rem;
     margin-bottom: 4rem;
 
+    @media(max-width:v.$tablet) {
+        flex-direction: column;
+    }
+
+
+
     &__item {
         @include m.button(v.$azul, v.$blanco, 768px) {
             font-weight: bold;

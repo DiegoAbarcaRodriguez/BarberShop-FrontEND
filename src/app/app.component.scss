@@ -1,8 +1,11 @@
-.flex-grow:nth-child(1) {
-    min-height: 100vh;
-}
+@use 'variables' as *;
 
-.flex-grow:last-child {
+.flex-grow {
     height: 100vh;
     overflow-y: scroll;
+
+    @media(max-width:$tablet) {
+        height: 65vh;
+    }
+
 }

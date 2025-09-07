@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .navbar {
     margin: 5rem auto;
     display: flex;
@@ -16,6 +18,9 @@
 
     }
 
+    @media(max-width: $tablet) {
+        flex-direction: column;
+    }
 
 }
 

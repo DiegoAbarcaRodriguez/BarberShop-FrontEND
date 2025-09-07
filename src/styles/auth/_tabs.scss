@@ -1,11 +1,25 @@
+@use 'variables' as *;
+
 .tabs {
     margin-top: 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    @media(max-width:$tablet) {
+        margin-bottom: 3rem;;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     &__option {
         font-size: 1.4rem;
+
+        @media(max-width:$tablet) {
+           font-size: 1.6rem;
+           margin: .8rem auto;
+        }
+
     }
 
     &__option:hover {

@@ -3,6 +3,10 @@
 .d-flex {
     display: flex;
     flex-wrap: wrap;
+
+    @media(max-width:$tablet) {
+        flex-direction: column;
+    }
 }
 
 .flex-column {

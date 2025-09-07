@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 span:first-child {
     font-size: 19px;
 }
@@ -10,4 +12,11 @@ span:first-child {
 
 .d-flex {
     margin-top: 5rem;
+
+    @media(max-width:$tablet) {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+
 }

@@ -9,6 +9,14 @@
     background-color: v.$azul;
     box-shadow: 1px 1px 10px 2px v.$azul;
 
+    @media(max-width:v.$tablet) {
+        top: 5%;
+        right: 5%;
+        bottom: auto;
+        left: auto;
+    }
+
+
     span {
         font-weight: bold;
         font-size: 2rem;

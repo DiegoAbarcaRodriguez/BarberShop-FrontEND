@@ -7,6 +7,13 @@
 .admin {
     padding: 2rem 4rem;
 
+    @media(max-width:v.$tablet) {
+        padding: 1rem 2rem;
+
+    }
+
+
+
     &__form {
         margin-top: 4rem;
     }
@@ -17,9 +24,23 @@
         align-items: center;
         gap: 2rem;
 
+        @media(max-width:v.$tablet) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: normal;
+            gap: 0rem;
+        }
+
+
         label {
             flex-basis: 6rem;
             color: white;
+
+            @media(max-width:v.$tablet) {
+                flex-basis: 3rem;
+                font-size: 1.8rem;
+            }
+
         }
 
     }
@@ -62,4 +83,9 @@
 .service {
     padding: 0 4rem;
     margin-bottom: 3rem;
+
+    @media(max-width:v.$tablet) {
+        padding: 0;
+
+    }
 }

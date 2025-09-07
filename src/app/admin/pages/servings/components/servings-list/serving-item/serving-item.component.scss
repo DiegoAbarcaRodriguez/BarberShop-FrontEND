@@ -27,6 +27,13 @@
         display: flex;
         justify-content: space-between;
         margin-top: 2rem;
+
+        @media(max-width:v.$tablet) {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+
     }
 
     &__update {

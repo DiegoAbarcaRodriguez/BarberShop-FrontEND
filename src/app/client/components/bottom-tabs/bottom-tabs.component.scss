@@ -2,6 +2,11 @@
 
 div {
     margin-top: 5rem;
+    @media(max-width:$tablet) {
+        margin-top: 0rem;
+    }
+
+
 }
 
 span {
@@ -11,5 +16,11 @@ span {
     color: $blanco;
     font-weight: bold;
     padding: 1rem 5rem;
+
+    @media(max-width:$tablet) {
+        width: fit-content;
+        margin: 2rem auto;
+    }
+
 
 }
