@@ -6,5 +6,6 @@ export interface LoginPayload {
 export interface LoginResponse {
     ok: boolean,
     token: string,
-    userName: string
+    userName: string,
+    isAdmin:boolean
 }

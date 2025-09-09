@@ -45,7 +45,7 @@ export default class LoginComponent {
 
     this._securityService.token = this.loginResource.value()!.token;
     this._appointmentService.setUserName(this.loginResource.value()?.userName || '');
-    this._timingService.initializeCounterToShowAlert();
+    if (!this.loginResource.value()?.isAdmin) this._timingService.initializeCounterToShowAlert();
     this._router.navigateByUrl('/book/services');
 
   });
